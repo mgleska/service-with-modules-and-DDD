@@ -1,0 +1,12 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Service with modules - demo app
+            description: Service with modules and module boundary checking - basic concepts demonstrator.
+            version: 1.0.0
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
+            - ^/customer
+            - ^/order
+            - ^/printer

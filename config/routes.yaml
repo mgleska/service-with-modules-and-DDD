@@ -1,0 +1,6 @@
+order:
+    resource:
+        path: ../src/Order/UserInterface/Api/
+        namespace: App\Order\UserInterface\Api
+    type: attribute
+    prefix: /order

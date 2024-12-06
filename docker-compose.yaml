@@ -1,0 +1,35 @@
+name: service-with-modules-and-DDD
+
+services:
+  database:
+    image: mariadb:10.11.7
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: db_password
+    volumes:
+      - mysql:/var/lib/mysql:rw
+    ports:
+      - "127.0.0.1:3306:3306"
+
+  php-api:
+    build:
+      context: docker
+      target: dev
+    image: local-php-api
+    restart: unless-stopped
+    depends_on:
+      - database
+    volumes:
+      - .:/app:rw
+      - vendor:/app/vendor
+      - var:/app/var
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DB_HOST: "database"
+    command: ["/bin/sh", "-c", "/app/start-app.sh dev ; sleep 36000"]
+
+volumes:
+  mysql:
+  vendor:
+  var:

@@ -1,0 +1,11 @@
+/vendor/
+/var/
+/coverage/
+/.git/
+/.idea/
+
+/.env.local
+/.env.local.php
+/.env.*.local
+
+/compose.override.yaml

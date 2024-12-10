@@ -1,8 +1,8 @@
 nelmio_api_doc:
     documentation:
         info:
-            title: Service with modules - demo app
-            description: Service with modules and module boundary checking - basic concepts demonstrator.
+            title: Service with modules and DDD - demo app
+            description: Service with modules and DDD - basic concepts demonstrator.
             version: 1.0.0
     areas: # to filter documented areas
         path_patterns:

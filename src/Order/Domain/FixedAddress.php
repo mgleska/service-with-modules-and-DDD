@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace App\Order\Domain;
 
-use App\Order\Infrastructure\Repository\FixedAddressRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\DependencyInjection\Attribute\Exclude;
 
-#[ORM\Entity(repositoryClass: FixedAddressRepository::class)]
+#[ORM\Entity]
 #[ORM\Table(name: "ord_fixed_address")]
 #[Exclude]
 class FixedAddress
